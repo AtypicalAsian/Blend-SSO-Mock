@@ -1,0 +1,122 @@
+<!-- SSO Successs-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SSO Success - Blend</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: #f5f7fa;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        color: #333;
+      }
+      .success-container {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        width: 400px;
+        text-align: center;
+      }
+      .logo-container {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+      .logo-container img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+      .success-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 1.5rem;
+        background-color: #4bb71b;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: pulse 2s infinite;
+      }
+      .success-icon::before {
+        content: "";
+        width: 30px;
+        height: 15px;
+        border-left: 4px solid white;
+        border-bottom: 4px solid white;
+        transform: rotate(-45deg) translate(3px, -3px);
+      }
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(75, 183, 27, 0.4);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(75, 183, 27, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(75, 183, 27, 0);
+        }
+      }
+      h1 {
+        font-size: 24px;
+        font-weight: 500;
+        margin-bottom: 1rem;
+        color: #2c3e50;
+      }
+      p {
+        font-size: 16px;
+        color: #7f8c8d;
+        margin-bottom: 2rem;
+        line-height: 1.5;
+      }
+      .redirect-btn {
+        background-color: #3498db;
+        border: none;
+        color: white;
+        padding: 12px 24px;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        border-radius: 6px;
+        transition: background-color 0.3s ease;
+      }
+      .redirect-btn:hover {
+        background-color: #2980b9;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="success-container">
+      <div class="logo-container">
+        <img src="blend.png" alt="Blend Logo" />
+      </div>
+      <div class="success-icon"></div>
+      <h1>SSO Authentication Successful</h1>
+      <p>
+        You have been successfully authenticated through Blend's SSO service.
+        You will be redirected to your account shortly.
+      </p>
+      <button
+        class="redirect-btn"
+        onclick="window.location.href = 'https://www.nicoletbank.com/wealth-management/investment-management';"
+      >
+        Go to My Account
+      </button>
+    </div>
+  </body>
+</html>

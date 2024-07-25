@@ -1,0 +1,148 @@
+<!--SSO initialization-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nicolet National Bank - Login</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Open Sans", sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        color: #333;
+      }
+      .login-container {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 340px;
+      }
+      .logo {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        height: 60px; /* Set a fixed height for the logo container */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .logo img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain; /* Ensure the logo fits within the container */
+      }
+      h1 {
+        font-size: 20px; /* Reduced font size */
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        text-align: center;
+        color: #005f61;
+      }
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: #005f61;
+      }
+      input,
+      select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        color: #333;
+        box-sizing: border-box; /* Ensure padding doesn't affect width */
+      }
+      select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23005f61' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        padding-right: 30px;
+      }
+      .login-btn {
+        width: 100%;
+        padding: 12px;
+        background-color: #005f61;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .login-btn:hover {
+        background-color: #004749;
+      }
+      .footer {
+        text-align: center;
+        margin-top: 1rem;
+        font-size: 14px;
+        color: #666;
+      }
+      .footer a {
+        color: #005f61;
+        text-decoration: none;
+      }
+      .footer a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="logo">
+        <img src="nicolet.png" alt="Nicolet National Bank Logo" />
+      </div>
+      <h1>Online Banking Login</h1>
+      <form>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <div class="form-group">
+          <label for="login-method">Login Method</label>
+          <select id="login-method" name="login-method">
+            <option value="default">Choose login method</option>
+            <option value="blend-sso">Blend SSO</option>
+            <option value="standard">Standard Login</option>
+          </select>
+        </div>
+        <a href="sso_process.html">
+          <input type="button" value="Submit" class="login-btn" />
+        </a>
+        <!-- <button
+          type="submit"
+          class="login-btn"
+          onclick="window.location.href = 'sso_process.html';"
+        >
+          Log In
+        </button> -->
+      </form>
+      <div class="footer">
+        <a href="#">Forgot Username or Password?</a> |
+        <a href="#">Enroll Now</a>
+      </div>
+    </div>
+  </body>
+</html>
