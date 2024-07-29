@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nicolet Online Banking Portal</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+      }
+      .header {
+        background-color: #005f61;
+        color: white;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+      }
+      .user-info {
+        font-size: 14px;
+      }
+      .container {
+        max-width: 1000px;
+        margin: 20px auto;
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .balance-summary {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+      .account {
+        background-color: #e6f3ff;
+        padding: 15px;
+        border-radius: 5px;
+        width: 48%;
+      }
+      h2 {
+        color: #003366;
+        margin-top: 0;
+      }
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        font-size: 16px;
+      }
+      #serviceInfo {
+        padding: 15px;
+        background-color: #e6f3ff;
+        border-radius: 5px;
+        display: none;
+      }
+      .quick-actions {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+      }
+      .action-button {
+        background-color: #005f61;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      .action-button:hover {
+        background-color: #004c99;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo">Nicolet Online Banking Portal</div>
+      <div class="user-info">
+        Welcome, John Doe | Last login: 26/07/2024 10:30 AM
+      </div>
+    </div>
+    <div class="container">
+      <div class="balance-summary">
+        <div class="account">
+          <h2>Checking Account</h2>
+          <p>Account Number: ****1234</p>
+          <p>Available Balance: $2,500.00</p>
+        </div>
+        <div class="account">
+          <h2>Savings Account</h2>
+          <p>Account Number: ****5678</p>
+          <p>Available Balance: $10,000.00</p>
+        </div>
+      </div>
+
+      <h2>Services</h2>
+      <select id="services">
+        <option value="">Select a service</option>
+        <option value="single sign on">Single Sign On</option>
+        <option value="billPay">Pay Bills</option>
+        <option value="loan">Apply for a Loan</option>
+        <option value="invest">Investments</option>
+        <option value="statements">View Statements</option>
+      </select>
+      <div id="serviceInfo"></div>
+
+      <div class="quick-actions">
+        <button class="action-button">View Transactions</button>
+        <button class="action-button">Set up Direct Deposit</button>
+        <button class="action-button">Order Checks</button>
+        <button class="action-button">Contact Support</button>
+      </div>
+    </div>
+
+    <script>
+      const servicesDropdown = document.getElementById("services");
+      const serviceInfo = document.getElementById("serviceInfo");
+
+      servicesDropdown.addEventListener("change", function () {
+        const selectedService = this.value;
+        if (selectedService) {
+          // Define URLs for each service
+          const serviceUrls = {
+            "single sign on": "sso_process.html",
+            billPay: "https://example.com/billpay",
+            loan: "https://example.com/loan",
+            invest: "https://example.com/investments",
+            statements: "https://example.com/statements",
+          };
+
+          // Redirect to the corresponding URL
+          if (serviceUrls[selectedService]) {
+            window.location.href = serviceUrls[selectedService];
+          } else {
+            serviceInfo.style.display = "block";
+            serviceInfo.innerHTML = `Invalid service selected. Please try again.`;
+          }
+        } else {
+          serviceInfo.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>
